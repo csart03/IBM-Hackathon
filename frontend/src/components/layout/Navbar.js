@@ -27,7 +27,7 @@ class Navbar extends Component {
       </ul>
     );
     let authLinks;
-    if (user.usertype === "applicant") {
+    if (user.usertype === "buyer") {
       authLinks = (
         <ul className="navbar-nav mr-auto">
           <Link className="nav-link" to="/edit-profile">

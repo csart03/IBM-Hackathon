@@ -5,8 +5,17 @@ const users = require("./routes/api/users");
 const buyer = require("./routes/api/buyer");
 const seller = require("./routes/api/seller");
 const passport = require("passport");
+
+const DB =
+  "mongodb+srv://witace:witace123@cluster0.sew3c.mongodb.net/hackathon?retryWrites=true&w=majority";
+// a;
 mongoose
-  .connect("mongodb://localhost/test1")
+  .connect(DB, {
+    useNewUrlParser: true,
+    useFindAndModify: false,
+    useCreateIndex: true,
+    useUnifiedTopology: true,
+  })
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.log(err));
 const app = express();
